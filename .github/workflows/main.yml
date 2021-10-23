@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Echo Actor
+        run: echo github.actor
+
+      - name: Echo Base Ref
+        run: echo github.base_ref
+
+      - name: Echo Event Name
+        run: echo github.event_name
+        
+      - name: Echo Head Ref 
+        run: echo github.head_ref
+        
+      - name: Echo Ref
+        run: echo github.ref
+        
+      - name: Echo Repository Owner
+        run: echo github.repository_owner
